@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Curso>
+
+<h2>Lista de Cursos</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Data de Início</th>
+            <th>Data de Término</th>
+            <th>Carga Horária</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var curso in Model)
+        {
+            <tr>
+                <td>@curso.Nome</td>
+                <td>@curso.Descricao</td>
+                <td>@curso.DataInicio.ToShortDateString()</td>
+                <td>@curso.DataFim.ToShortDateString()</td>
+                <td>@curso.CargaHoraria</td>
+            </tr>
+        }
+    </tbody>
+</table>
